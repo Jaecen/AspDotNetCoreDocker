@@ -1,13 +1,15 @@
 # Build code
-FROM microsoft/dotnet:2.1-sdk as build
+FROM microsoft/dotnet:2.1-sdk AS build
 
-COPY src/ ./src
-RUN ["dotnet", "restore", "src"]
-RUN ["dotnet", "publish", "src", "--configuration", "Release", "--output", "../../deploy/"]
+COPY *.sln ./
+COPY src/. ./src/
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "publish", "--configuration", "Release", "--output", "../../deploy/"]
 
 # Create app image
 FROM microsoft/dotnet:2.1-aspnetcore-runtime
 
-COPY --from=build /deploy/ .
+COPY --from=build /deploy/ /app
 
-ENTRYPOINT ["dotnet", "AspNetCoreDocker.dll"]
+EXPOSE 80
+ENTRYPOINT ["dotnet", "app/AspDotNetCoreDocker.Web.dll"]
