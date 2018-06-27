@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetCoreDocker.Web", "AspDotNetCoreDocker.Web\AspDotNetCoreDocker.Web.csproj", "{3A5BCE06-14FB-4CBF-AC1D-CD939BA7631D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetCoreDocker.Web", "src\AspDotNetCoreDocker.Web\AspDotNetCoreDocker.Web.csproj", "{3A5BCE06-14FB-4CBF-AC1D-CD939BA7631D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C8AE20E-764B-4F23-9BB2-2132A1E3BB52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EC2D143-B051-44A4-B90E-20DC21B749B6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		DOCKERFILE = DOCKERFILE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BD3F1957-0827-4F69-8FA2-D94631720C1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A5BCE06-14FB-4CBF-AC1D-CD939BA7631D} = {7C8AE20E-764B-4F23-9BB2-2132A1E3BB52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B69D31A3-CE57-4FE6-B05E-F8C22E4BF8F5}
